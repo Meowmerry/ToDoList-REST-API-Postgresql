@@ -1,7 +1,8 @@
 # TO-DO-LIST-REST-API with DOMJS
 
 ## Summary
-The database assessment will be used to assess your understanding of the material provided in the previous few units, in this case `Postgresql`.
+The database will be used to assess your understanding of the material provided in the previous few units, in this case `Postgresql`.
+This will help you to understand how to set up fullStack without using any framework.
 
 
 ## How do I get started
