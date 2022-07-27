@@ -20,7 +20,7 @@ todolistController.createItemList = async (req, res, next) => {
 
 todolistController.getAllList = async (req, res, next) => {
   try {
-    const sqlQuery = "SELECT * From listTodo"
+    const sqlQuery = `SELECT * From listTodo`
     const data = await db.query(sqlQuery);
     res.locals.list = data.rows;
     return next();
@@ -30,8 +30,16 @@ todolistController.getAllList = async (req, res, next) => {
 };
 
 todolistController.updateListById = async (req, res, next) => {
-  try {
 
+  try {
+    const {id} = req.params
+    const {items, isDone, minutes } = req.body;
+    if(items || isDone ||minutes ){
+    const sqlQuery = `UPDATE listTodo
+    SET items = $1, isDone = $2, minutes=$3
+    WHERE id =${id}`;
+    await db.query(sqlQuery,[items,isDone,minutes]);
+    }
     res.locals.status = "Successfully updated!";
     return next();
   } catch (error) {
@@ -41,7 +49,18 @@ todolistController.updateListById = async (req, res, next) => {
 
 todolistController.deleteListById = async (req, res, next) => {
   try {
+    const {id} = req.params;
+    if(id){
+        const sqlQuery = `DELETE FROM listTodo WHERE id =${id}`;
+        await db.query(sqlQuery);
+        res.locals.status = "Successfully deleted!";
+    }else{
+        return next(createError({ message: { err: error.message } }));
+    }
+    return next();
   } catch (error) {
+  
+  
     return next(createError({ message: { err: error.message } }));
   }
 };

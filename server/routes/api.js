@@ -15,7 +15,7 @@ router.patch('/list/:id',todolistController.updateListById ,(req, res)=>{
 })
 
 router.delete('/list/:id',todolistController.deleteListById ,(req, res)=>{
-    return res.status(200).json({list: res.locals.list})
+    return res.status(200).json(res.locals.status)
 })
 
 
