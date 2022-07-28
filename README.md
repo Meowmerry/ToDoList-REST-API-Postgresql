@@ -6,12 +6,23 @@ This will help you to understand how to set up fullStack without using any frame
 
 
 ## How do I get started
-
+### Postgresql
 - npm init -y
 - install express. 
 - npm install express 
 - npm i dotenv
 - npm i pg
+- npm i nodemon 
+- npm i cors
+- npm i body-parser
+- npm i cookie-parser
+
+### mongoDB
+- npm init -y
+- install express. 
+- npm install express 
+- npm i dotenv
+- npm i mongoose
 - npm i nodemon 
 - npm i cors
 - npm i body-parser

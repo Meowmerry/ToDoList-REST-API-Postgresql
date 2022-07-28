@@ -9,7 +9,8 @@ todolistController.createItemList = async (req, res, next) => {
     const { id, items, isDone, minutes } = req.body;
     const sqlQuery = `INSERT INTO listTodo
         (id, items, isDone, minutes)
-        VALUES($1, $2, $3, $4);`;
+        VALUES($1, $2, $3, $4)
+        RETURNING *`;
     await db.query(sqlQuery, [id, items, isDone, minutes]);
     res.locals.status = "Successfully created!";
     return next();
