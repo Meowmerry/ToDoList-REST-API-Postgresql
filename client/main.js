@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   container.setAttribute("id", "container");
   document.querySelector("body").appendChild(container);
 
+ 
+
+
+
+
+  // create input todo add
   const divBoxContainer = document.createElement("div");
   divBoxContainer.setAttribute("id", "divBoxContainer");
   container.append(divBoxContainer);
@@ -12,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   title.innerText = "To Do List";
   divBoxContainer.appendChild(title);
 
-  // create input todo add
+  
   const lineSpan = document.createElement('span');
   lineSpan.setAttribute('class','lineSpan');
   divBoxContainer.appendChild(lineSpan);
@@ -27,6 +33,28 @@ document.addEventListener("DOMContentLoaded", () => {
   inputButton.setAttribute('value', 'ADD');
   inputButton.setAttribute('label', 'text');
   lineSpan.append(inputButton)
+
+
+   // create input todo edit
+   const divBoxContainerEdit = document.createElement("div");
+   divBoxContainerEdit.setAttribute("id", "divBoxContainerEdit");
+   container.append(divBoxContainerEdit);
+   divBoxContainerEdit.style.textAlign = "center";
+
+   const lineSpan1 = document.createElement('span');
+   lineSpan.setAttribute('class','lineSpan1');
+   divBoxContainerEdit.appendChild(lineSpan1);
+ 
+   const inputEdit = document.createElement("input");
+   inputEdit.setAttribute("class", "inputEdit");
+   lineSpan1.append(inputEdit);
+ 
+   const inputButtonEdit = document.createElement('input');
+   inputButtonEdit.setAttribute('id', 'inputButtonEditEdit');
+   inputButtonEdit.setAttribute('type', 'submit');
+   inputButtonEdit.setAttribute('value', 'EDIT');
+   inputButtonEdit.setAttribute('label', 'text');
+   lineSpan1.append(inputButtonEdit)
   
 
 
