@@ -10,4 +10,5 @@ module.exports = {
       //console.log('executed query', text);
       return pool.query(text, params, callback);
     }
-  };
+};
+  // Frontend ===> server---> server.js / app.js ---> router ---> controllers --- \ model (database)  \ postress

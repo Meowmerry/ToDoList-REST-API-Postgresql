@@ -8,6 +8,7 @@ create table users
         first_name varchar not null default '',
         last_name varchar not null default ''
 );
+
 create table listTodo (
     id bigserial
     items varchar not null,

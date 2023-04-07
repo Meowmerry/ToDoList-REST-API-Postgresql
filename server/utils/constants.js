@@ -1,4 +1,4 @@
-const createEruror = (errObj) => {
+const createError = (errObj) => {
     return Object.assign(
         {
             log: "Express error handler caught unknown middleware error",
@@ -9,4 +9,4 @@ const createEruror = (errObj) => {
     );
 };
 
-module.exports = {createEruror};
+module.exports = {createError};

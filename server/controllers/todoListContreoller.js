@@ -8,8 +8,8 @@ todolistController.createItemList = async (req, res, next) => {
   try {
     const { id, items, isDone, minutes } = req.body;
     const sqlQuery = `INSERT INTO listTodo
-        (id, items, isDone, minutes)
-        VALUES($1, $2, $3, $4)
+              (id, items, isDone, minutes)  
+        VALUES($1, $2, $3, $4) 
         RETURNING *`;
     await db.query(sqlQuery, [id, items, isDone, minutes]);
     res.locals.status = "Successfully created!";
@@ -37,7 +37,7 @@ todolistController.updateListById = async (req, res, next) => {
     const {items, isDone, minutes } = req.body;
     if(items || isDone ||minutes ){
     const sqlQuery = `UPDATE listTodo
-    SET items = $1, isDone = $2, minutes=$3
+    SET items = $1, isDone = $2, minutes = $3
     WHERE id =${id}`;
     await db.query(sqlQuery,[items,isDone,minutes]);
     }
